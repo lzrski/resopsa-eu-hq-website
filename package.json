@@ -4,7 +4,8 @@
   "description": "Responsa.eu international HQ website",
   "main": "build/index.html",
   "scripts": {
-    "test": "gulp test"
+    "test": "gulp test",
+    "develop": "gulp develop"
   },
   "repository": {
     "type": "git",
