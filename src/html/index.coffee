@@ -96,7 +96,7 @@ module.exports = new View (options) ->
                     @img src: 'img/poland.svg', style: 'width: 100%; opacity: 0.8'
                     @a
                       class : 'btn btn-primary btn-block btn-lg'
-                      href  : 'https://pl.responsa.eu'
+                      href  : 'https://responsa.eu'
                       =>
                         "Polish law portal"
 
