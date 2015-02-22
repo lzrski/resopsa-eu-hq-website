@@ -5,6 +5,7 @@
   "main": "build/index.html",
   "scripts": {
     "test": "gulp test",
+    "prepublish": "gulp",
     "develop": "gulp develop"
   },
   "repository": {
