@@ -64,3 +64,25 @@ module.exports = new View (options) ->
                   @li => @a href: "#about",   "About our project"
                   @li => @a href: "#portals", "National portals"
                   @li => @a href: "#contact", "Contact"
+
+      @div class: 'intro-header', =>
+        @div clas: 'container', =>
+          @div class: 'row', =>
+            @div
+              # In the middle:
+              class: [
+                'col-md-6'
+                'col-md-offset-3'
+
+                'col-sm-8'
+                'col-sm-offset-2'
+
+                'col-xs-10'
+                'col-xs-offset-1'
+              ].join ' '
+              =>
+                @div class: 'intro-message', =>
+                  @img
+                    class : 'logo'
+                    src   : 'img/responsa-eu-negative.svg'
+                    alt   : 'Responsa.eu - about the law'
