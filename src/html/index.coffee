@@ -1,4 +1,6 @@
 View = require 'teacup-view'
+View.load_components
+  markdown: require "../components/markdown"
 
 module.exports = new View (options) ->
   @doctype 5
@@ -65,8 +67,8 @@ module.exports = new View (options) ->
                   @li => @a href: "#portals", "National portals"
                   @li => @a href: "#contact", "Contact"
 
-      @div class: 'intro-header', =>
-        @div clas: 'container', =>
+      @div class: 'intro-header', id: 'start', =>
+        @div class: 'container', =>
           @div class: 'row', =>
             @div
               # In the middle:
@@ -81,8 +83,51 @@ module.exports = new View (options) ->
                 'col-xs-offset-1'
               ].join ' '
               =>
-                @div class: 'intro-message', =>
-                  @img
-                    class : 'logo'
-                    src   : 'img/responsa-eu-negative.svg'
-                    alt   : 'Responsa.eu - about the law'
+                @div class: 'row', =>
+                  @header class: 'col-md-12 intro-message', =>
+                    @img
+                      class : 'logo'
+                      src   : 'img/responsa-eu-negative.svg'
+                      alt   : 'Responsa.eu - about the law'
+
+                  @div class: 'col-md-12 start', => @h4 "Start:"
+
+                  @div class: 'col-md-4 polish',  =>
+                    @img src: 'img/poland.svg', style: 'width: 100%; opacity: 0.8'
+                    @a
+                      class : 'btn btn-primary btn-block btn-lg'
+                      href  : 'https://pl.responsa.eu'
+                      =>
+                        "Polish law portal"
+
+                  @div class: 'col-md-4 portals', =>
+                    @img src: 'img/europe.svg', style: 'width: 100%; opacity:0.8'
+                    @a
+                      class : 'btn btn-default btn-block btn-lg'
+                      href  : '#portals'
+                      =>
+                        "See other portals"
+
+                  @div class: 'col-md-4 contact', =>
+                    @img src: 'img/europe.svg', style: 'width: 100%; opacity:0.8'
+                    @a
+                      class : 'btn btn-default btn-block btn-lg'
+                      href  : '#about'
+                      =>
+                        "Start a new one"
+
+      @div id: 'about', =>
+        @div class: 'container', =>
+          @div class: 'row', =>
+            @div class: 'col-md-12', =>
+              @h2 "About us"
+              @markdown """
+                We are a not-for-profit company of peaople dedicated to improve legal awareness in Europe.
+              """
+
+              @h3 "About Responsa.eu"
+              @markdown """
+                 We are building a platform for young lawyers to get recognition by providing their legal expertise to general public.
+
+                 For that end we have created a custom, free and open source software tool (R20).
+              """
