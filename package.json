@@ -1,0 +1,33 @@
+{
+  "name": "responsa-eu",
+  "version": "1.0.0",
+  "description": "Responsa.eu international HQ website",
+  "main": "build/index.html",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:lzrski/resopsa-eu-hq-website.git"
+  },
+  "keywords": [
+    "responsa.eu",
+    "website"
+  ],
+  "author": "Tadeusz Łazurski <http://lazurski.pl>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lzrski/resopsa-eu-hq-website/issues"
+  },
+  "homepage": "https://github.com/lzrski/resopsa-eu-hq-website",
+  "devDependencies": {
+    "coffee-script": "^1.9.1",
+    "gulp": "^3.8.11",
+    "gulp-notify": "^2.2.0",
+    "gulp-rename": "^1.2.0",
+    "lodash": "^3.3.0",
+    "teacup-view": "^0.2.2",
+    "through": "^2.3.6",
+    "through2": "^0.6.3"
+  }
+}
