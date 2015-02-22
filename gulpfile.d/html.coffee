@@ -1,10 +1,11 @@
-gulp    = require 'gulp'
-_       = require 'lodash'
-through = require 'through2'
-notify  = require 'gulp-notify'
-rename  = require 'gulp-rename'
+gulp        = require 'gulp'
+path        = require 'path'
+_           = require 'lodash'
+through     = require 'through2'
+notify      = require 'gulp-notify'
+rename      = require 'gulp-rename'
 
-module.exports = (options) ->
+module.exports = (options = {}) ->
   _.defaults options,
     sources     : 'src/html/**/*.coffee'
     destination : 'build/public/'
@@ -13,6 +14,11 @@ module.exports = (options) ->
     sources
     destination
   } = options
+
+  if typeof sources is 'string' then sources = [ sources ]
+  sources = sources.map (dir) -> path.resolve __dirname, '..', dir
+  destination = path.resolve __dirname, '..', destination
+
 
   gulp.task 'html', ->
     gulp

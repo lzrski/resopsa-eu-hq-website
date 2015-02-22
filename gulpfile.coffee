@@ -1,8 +1,12 @@
-path = require 'path'
+gulp        = require 'gulp'
+path        = require 'path'
+del         = require 'del'
+sequence    = require 'run-sequence'
 
 # Tasks are modularized
-html = require './gulpfile.d/html'
+do require './gulpfile.d/html'
+do require './gulpfile.d/assets'
 
-html
-  sources     : path.resolve __dirname, 'src/html/**/*.coffee'
-  destination : path.resolve __dirname, 'build/public/'
+gulp.task 'clean', (done) -> del 'build/*', done
+
+gulp.task 'default', -> sequence 'clean', 'assets', 'html'
