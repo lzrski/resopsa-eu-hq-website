@@ -35,4 +35,32 @@ module.exports = new View (options) ->
       ]
 
     @body =>
-      @h1 'Hello, Teacup!'
+      @nav
+        class : "navbar navbar-default navbar-fixed-top topnav"
+        role  : "navigation"
+        =>
+          @div class: "container topnav", =>
+            # Brand and toggle get grouped for better mobile display
+            @div class: "navbar-header", =>
+              @button
+                type  : "button"
+                class : "navbar-toggle"
+                data  :
+                  toggle: "collapse"
+                  target: "#bs-example-navbar-collapse-1"
+                =>
+                  @span class: "sr-only", "Toggle navigation"
+                  @span class: "icon-bar"
+                  @span class: "icon-bar"
+                  @span class: "icon-bar"
+
+              @a class: "navbar-brand topnav", href: "#", "Responsa.eu"
+
+            @div
+              class : "collapse navbar-collapse"
+              id    : "bs-example-navbar-collapse-1"
+              =>
+                @ul class: "nav navbar-nav navbar-right", =>
+                  @li => @a href: "#about",   "About our project"
+                  @li => @a href: "#portals", "National portals"
+                  @li => @a href: "#contact", "Contact"
